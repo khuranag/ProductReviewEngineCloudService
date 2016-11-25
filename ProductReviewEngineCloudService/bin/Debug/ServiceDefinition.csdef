@@ -27,14 +27,10 @@
     <Imports>
       <Import moduleName="RemoteAccess" />
       <Import moduleName="RemoteForwarder" />
-      <Import moduleName="Diagnostics" />
     </Imports>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\gkhurana\Documents\Personal\Intuit\ProductReviewEngineCloudService\ProductReviewEngineCloudService\rcf\Debug\WebRole1Content\" />
-      </Content>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Users\gkhurana\Documents\Personal\Intuit\ProductReviewEngineCloudService\ProductReviewEngineCloudService\ecf\WebRole1Content\" />
+        <SourceDirectory path="C:\Users\gkhurana\Documents\Personal\Intuit\repo\ProductReviewEngineCloudService\ProductReviewEngineCloudService\rcf\Debug\WebRole1Content\" />
       </Content>
     </Contents>
   </WebRole>

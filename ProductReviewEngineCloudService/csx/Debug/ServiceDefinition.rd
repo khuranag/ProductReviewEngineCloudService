@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductReviewEngineCloudService" generation="1" functional="0" release="0" Id="57354194-8aba-4569-8627-bff8a1b0b2bf" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductReviewEngineCloudService" generation="1" functional="0" release="0" Id="3330ea25-79c3-4b53-8456-ccbc202d9a2a" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="ProductReviewEngineCloudServiceGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -127,7 +127,7 @@
       </maps>
       <components>
         <groupHascomponents>
-          <role name="WebRole1" generation="1" functional="0" release="0" software="C:\Users\gkhurana\Documents\Personal\Intuit\ProductReviewEngineCloudService\ProductReviewEngineCloudService\csx\Debug\roles\WebRole1" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="-1" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
+          <role name="WebRole1" generation="1" functional="0" release="0" software="C:\Users\gkhurana\Documents\Personal\Intuit\repo\ProductReviewEngineCloudService\ProductReviewEngineCloudService\csx\Debug\roles\WebRole1" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="-1" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
             <componentports>
               <inPort name="Endpoint1" protocol="http" portRanges="80" />
               <inPort name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput" protocol="tcp" />
@@ -178,14 +178,14 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="beb80ca9-e9cf-4b1e-bb40-23f836b8ec0c" ref="Microsoft.RedDog.Contract\ServiceContract\ProductReviewEngineCloudServiceContract@ServiceDefinition">
+    <implementation Id="b0752053-24cc-424b-bf4c-3f6ed16652e7" ref="Microsoft.RedDog.Contract\ServiceContract\ProductReviewEngineCloudServiceContract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="29b1c44c-0051-41a6-8a64-0ca872445b89" ref="Microsoft.RedDog.Contract\Interface\WebRole1:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="90982d55-634b-4193-bb7a-505cf6876e4b" ref="Microsoft.RedDog.Contract\Interface\WebRole1:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/ProductReviewEngineCloudService/ProductReviewEngineCloudServiceGroup/WebRole1:Endpoint1" />
           </inPort>
         </interfaceReference>
-        <interfaceReference Id="eb7e28b6-9dbe-44c2-b618-a5828c304236" ref="Microsoft.RedDog.Contract\Interface\WebRole1:Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput@ServiceDefinition">
+        <interfaceReference Id="403b7dce-481c-4373-bc79-986738dfdf75" ref="Microsoft.RedDog.Contract\Interface\WebRole1:Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/ProductReviewEngineCloudService/ProductReviewEngineCloudServiceGroup/WebRole1:Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput" />
           </inPort>
