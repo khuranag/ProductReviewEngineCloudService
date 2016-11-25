@@ -1,0 +1,735 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebRole1</name>
+    </assembly>
+    <members>
+        <member name="T:WebRole1.WebApiConfig">
+            <summary>
+            Web Config class
+            </summary>
+        </member>
+        <member name="M:WebRole1.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Registers the specified configuration.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="T:WebRole1.Controllers.AccountController">
+            <summary>
+            User Account controller
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Controllers.AccountController"/> class.
+            </summary>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.#ctor(WebRole1.ApplicationUserManager,Microsoft.Owin.Security.ISecureDataFormat{Microsoft.Owin.Security.AuthenticationTicket})">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Controllers.AccountController"/> class.
+            </summary>
+            <param name="userManager">The user manager.</param>
+            <param name="accessTokenFormat">The access token format.</param>
+        </member>
+        <member name="P:WebRole1.Controllers.AccountController.UserManager">
+            <summary>
+            Gets the user manager.
+            </summary>
+            <value>
+            The user manager.
+            </value>
+        </member>
+        <member name="P:WebRole1.Controllers.AccountController.AccessTokenFormat">
+            <summary>
+            Gets the access token format.
+            </summary>
+            <value>
+            The access token format.
+            </value>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.GetUserInfo">
+            <summary>
+            Get the user information.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.Logout">
+            <summary>
+            Log Out the user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.GetManageInfo(System.String,System.Boolean)">
+            <summary>
+            Get the manage information.
+            </summary>
+            <param name="returnUrl">The return URL.</param>
+            <param name="generateState">if set to <c>true</c> [generate state].</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.ChangePassword(WebRole1.Models.ChangePasswordBindingModel)">
+            <summary>
+            Change the user account password
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.SetPassword(WebRole1.Models.SetPasswordBindingModel)">
+            <summary>
+            Set the user account password.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.AddExternalLogin(WebRole1.Models.AddExternalLoginBindingModel)">
+            <summary>
+            Add the external login.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.RemoveLogin(WebRole1.Models.RemoveLoginBindingModel)">
+            <summary>
+            Remove the user login.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.GetExternalLogin(System.String,System.String)">
+            <summary>
+            Get the external login
+            </summary>
+            <param name="provider">The provider.</param>
+            <param name="error">The error.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.GetExternalLogins(System.String,System.Boolean)">
+            <summary>
+            Get the external logins
+            </summary>
+            <param name="returnUrl">The return URL.</param>
+            <param name="generateState">if set to <c>true</c> [generate state].</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.Register(WebRole1.Models.RegisterBindingModel)">
+            <summary>
+            Register User account. After registtration send a request to /token to get the authorization token
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Controllers.AccountController.RegisterExternal(WebRole1.Models.RegisterExternalBindingModel)">
+            <summary>
+            Register external 
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebRole1.Controllers.ApiControllerExtension">
+            <summary>
+            Container for API Controller extensions
+            </summary>
+        </member>
+        <member name="M:WebRole1.Controllers.ApiControllerExtension.ExamineRepositoryResult(System.Web.Http.ApiController,WebRole1.Models.Result)">
+            <summary>
+            Examines the repository result.
+            </summary>
+            <param name="controller">The controller.</param>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:WebRole1.Controllers.ApiControllerExtension.SendErrorResponse(System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Sends the error response.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="statusCode">The status code.</param>
+            <exception cref="T:System.Web.Http.HttpResponseException"></exception>
+            <exception cref="T:System.Net.Http.HttpResponseMessage"></exception>
+        </member>
+        <member name="T:WebRole1.Controllers.ProductsController">
+            <summary>
+            Products Controller
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="F:WebRole1.Controllers.ProductsController.productsRepo">
+            <summary>
+            The reviewes repo
+            </summary>
+        </member>
+        <member name="M:WebRole1.Controllers.ProductsController.#ctor(WebRole1.Models.IProductsRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Controllers.ReviewsController"/> class.
+            </summary>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebRole1.Controllers.ProductsController.GetProducts">
+            <summary>
+            Get the list of products in the store
+            </summary>
+            <returns>List of Products</returns>
+        </member>
+        <member name="M:WebRole1.Controllers.ProductsController.AddProduct(WebRole1.Models.ProductEntry)">
+            <summary>
+            Add a product
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WebRole1.Controllers.ProductsController.UpdateProduct(System.Int32,WebRole1.Models.ProductEntry)">
+            <summary>
+            Update a product.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WebRole1.Controllers.ProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            Delete a product
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="T:WebRole1.Controllers.ReviewsController">
+            <summary>
+            Reviews Controller
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />    
+        </member>
+        <member name="F:WebRole1.Controllers.ReviewsController.reviewesRepo">
+            <summary>
+            The reviewes repo
+            </summary>
+        </member>
+        <member name="M:WebRole1.Controllers.ReviewsController.#ctor(WebRole1.Models.IProductsReviewsRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Controllers.ReviewsController"/> class.
+            </summary>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebRole1.Controllers.ReviewsController.GetReviewsPerProduct(System.String)">
+            <summary>
+            Lists the reviews for a product
+            </summary>
+            <param name="productname">The productname.</param>
+            <returns>
+            Aggregated result
+            </returns>
+        </member>
+        <member name="M:WebRole1.Controllers.ReviewsController.PostProductReviews(WebRole1.Models.ProductReviewEntry)">
+            <summary>
+            Submit a product review
+            </summary>
+            <param name="value">The value.</param>        
+        </member>
+        <member name="M:WebRole1.Controllers.ReviewsController.UpdateProductReview(System.Int32,WebRole1.Models.ProductReviewEntry)">
+            <summary>
+            Update a product review
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WebRole1.Controllers.ReviewsController.DeleteProductReview(System.Int32)">
+            <summary>
+            Delete a  product review
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="T:WebRole1.WebApiApplication">
+            <summary>
+            Web API Application
+            </summary>
+            <seealso cref="T:System.Web.HttpApplication" />
+        </member>
+        <member name="M:WebRole1.WebApiApplication.Application_Start">
+            <summary>
+            Applications the start.
+            </summary>
+        </member>
+        <member name="T:WebRole1.Models.IProductsRepository">
+            <summary>
+            Interface for Products Repository
+            </summary>
+        </member>
+        <member name="M:WebRole1.Models.IProductsRepository.AddProduct(WebRole1.Models.ProductEntry)">
+            <summary>
+            Adds the product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.IProductsRepository.ListProducts">
+            <summary>
+            Gets the products.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.IProductsRepository.UpdateProduct(System.Int32,WebRole1.Models.ProductEntry)">
+            <summary>
+            Updates the product.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="entry">The entry.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.IProductsRepository.DeleteProduct(System.Int32)">
+            <summary>
+            Deletes the product.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebRole1.Models.IProductsReviewsRepository">
+            <summary>
+            Repository for Products Reviews
+            </summary>
+        </member>
+        <member name="M:WebRole1.Models.IProductsReviewsRepository.SubmitReview(WebRole1.Models.ProductReviewEntry)">
+            <summary>
+            Submits the review.
+            </summary>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="M:WebRole1.Models.IProductsReviewsRepository.UpdateReview(System.Int32,WebRole1.Models.ProductReviewEntry)">
+            <summary>
+            Updates the review.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="entry">The entry.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.IProductsReviewsRepository.ReviewsPerProduct(System.String)">
+            <summary>
+            Gets the reviews for a product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.IProductsReviewsRepository.DeleteReview(System.Int32)">
+            <summary>
+            Deletes the review.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebRole1.Models.Product">
+            <summary>
+            Product class
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.Product.Id">
+            <summary>
+            The identifier
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.Product.CreateTime">
+            <summary>
+            The create time
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.Product.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.Product.Sku">
+            <summary>
+            Gets or sets the sku.
+            </summary>
+            <value>
+            The sku.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.Product.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.Product.Price">
+            <summary>
+            Gets or sets the price.
+            </summary>
+            <value>
+            The price.
+            </value>
+        </member>
+        <member name="T:WebRole1.Models.ProductEntry">
+            <summary>
+            Product entry to receive data in Post/PUT requests
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.ProductEntry.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductEntry.Sku">
+            <summary>
+            Gets or sets the sku.
+            </summary>
+            <value>
+            The sku.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductEntry.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductEntry.Price">
+            <summary>
+            Gets or sets the price.
+            </summary>
+            <value>
+            The price.
+            </value>
+        </member>
+        <member name="T:WebRole1.Models.ProductReview">
+            <summary>
+            Product review container
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.ProductReview.Id">
+            <summary>
+            The identifier
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.ProductReview.CreateTime">
+            <summary>
+            The create time
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.ProductReview.ProductName">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+            <value>
+            The name of the product.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductReview.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductReview.Score">
+            <summary>
+            Gets or sets the score.
+            </summary>
+            <value>
+            The score.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductReview.Comment">
+            <summary>
+            Gets or sets the comment.
+            </summary>
+            <value>
+            The comment.
+            </value>
+        </member>
+        <member name="T:WebRole1.Models.ProductReviewEntry">
+            <summary>
+            Product Review entry to receive data in POST/PUT requests
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.ProductReviewEntry.ProductName">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+            <value>
+            The name of the product.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductReviewEntry.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductReviewEntry.Score">
+            <summary>
+            Gets or sets the score.
+            </summary>
+            <value>
+            The score.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductReviewEntry.Comment">
+            <summary>
+            Gets or sets the comment.
+            </summary>
+            <value>
+            The comment.
+            </value>
+        </member>
+        <member name="T:WebRole1.Models.ProductReviewsResult">
+            <summary>
+            Class to return final reviews with result status
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.ProductReviewsResult.ReviewsResult">
+            <summary>
+            Gets or sets the reviews result.
+            </summary>
+            <value>
+            The reviews result.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductReviewsResult.RepositoryResult">
+            <summary>
+            Gets or sets the repository result.
+            </summary>
+            <value>
+            The repository result.
+            </value>
+        </member>
+        <member name="T:WebRole1.Models.ProductsRepository">
+            <summary>
+            Products Repository
+            </summary>
+            <seealso cref="T:WebRole1.Models.IProductsRepository" />
+        </member>
+        <member name="F:WebRole1.Models.ProductsRepository.dbContext">
+            <summary>
+            The database context
+            </summary>
+        </member>
+        <member name="M:WebRole1.Models.ProductsRepository.#ctor(WebRole1.Models.StoreDBContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Models.ProductsReviewsRepository"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:WebRole1.Models.ProductsRepository.AddProduct(WebRole1.Models.ProductEntry)">
+            <summary>
+            Adds the product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:WebRole1.Models.ProductsRepository.DeleteProduct(System.Int32)">
+            <summary>
+            Deletes the product.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:WebRole1.Models.ProductsRepository.ListProducts">
+            <summary>
+            Gets the products.
+            </summary>
+            <returns>Products result</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:WebRole1.Models.ProductsRepository.UpdateProduct(System.Int32,WebRole1.Models.ProductEntry)">
+            <summary>
+            Updates the product.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="entry">The entry.</param>
+            <returns>result</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:WebRole1.Models.ProductsResult">
+            <summary>
+            Container fpr Products Result
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.ProductsResult.Result">
+            <summary>
+            Gets or sets the result.
+            </summary>
+            <value>
+            The result.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.ProductsResult.Products">
+            <summary>
+            Gets or sets the products.
+            </summary>
+            <value>
+            The products.
+            </value>
+        </member>
+        <member name="T:WebRole1.Models.ProductsReviewsRepository">
+            <summary>
+            Products Reviews Repository
+            </summary>
+            <seealso cref="T:WebRole1.Models.IProductsReviewsRepository" />
+        </member>
+        <member name="F:WebRole1.Models.ProductsReviewsRepository.dbContext">
+            <summary>
+            The database context
+            </summary>
+        </member>
+        <member name="M:WebRole1.Models.ProductsReviewsRepository.#ctor(WebRole1.Models.StoreDBContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Models.ProductsReviewsRepository"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:WebRole1.Models.ProductsReviewsRepository.SubmitReview(WebRole1.Models.ProductReviewEntry)">
+            <summary>
+            Submits the review.
+            </summary>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="M:WebRole1.Models.ProductsReviewsRepository.ReviewsPerProduct(System.String)">
+            <summary>
+            Gets the reviews for a product.
+            </summary>
+            <param name="productName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.ProductsReviewsRepository.UpdateReview(System.Int32,WebRole1.Models.ProductReviewEntry)">
+            <summary>
+            Updates the review.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="entry">The entry.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.ProductsReviewsRepository.DeleteReview(System.Int32)">
+            <summary>
+            Deletes the review.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebRole1.Models.ProductsReviewsRepository.StandardSubmitReviewRequestValidation(WebRole1.Models.ProductReviewEntry)">
+            <summary>
+            Standards the submit review request validation.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:WebRole1.Models.Status">
+            <summary>
+            Result Status
+            </summary>
+        </member>
+        <member name="F:WebRole1.Models.Status.Success">
+            <summary>
+            The success
+            </summary>
+        </member>
+        <member name="F:WebRole1.Models.Status.Failure">
+            <summary>
+            The failure
+            </summary>
+        </member>
+        <member name="F:WebRole1.Models.Status.InternalError">
+            <summary>
+            The internal error
+            </summary>
+        </member>
+        <member name="T:WebRole1.Models.Result">
+            <summary>
+            Result class
+            </summary>
+        </member>
+        <member name="M:WebRole1.Models.Result.#ctor(WebRole1.Models.Status)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Models.Result"/> class.
+            </summary>
+            <param name="status">The status.</param>
+        </member>
+        <member name="P:WebRole1.Models.Result.Status">
+            <summary>
+            Gets or sets the statu code.
+            </summary>
+            <value>
+            The status code.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.Result.ErrorReason">
+            <summary>
+            Gets or sets the reason phrase.
+            </summary>
+            <value>
+            The reason phrase.
+            </value>
+        </member>
+        <member name="T:WebRole1.Models.AggregatedReviewsResult">
+            <summary>
+            Reviews Result Container
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.AggregatedReviewsResult.AggregatedScore">
+            <summary>
+            Gets or sets the aggregated score.
+            </summary>
+            <value>
+            The aggregated score.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.AggregatedReviewsResult.Reviews">
+            <summary>
+            The reviews
+            </summary>
+        </member>
+        <member name="M:WebRole1.Models.StoreDBContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebRole1.Models.StoreDBContext"/> class.
+            </summary>
+        </member>
+        <member name="P:WebRole1.Models.StoreDBContext.Products">
+            <summary>
+            Gets or sets the products.
+            </summary>
+            <value>
+            The products.
+            </value>
+        </member>
+        <member name="P:WebRole1.Models.StoreDBContext.ProductReviews">
+            <summary>
+            Gets or sets the product reviews.
+            </summary>
+            <value>
+            The product reviews.
+            </value>
+        </member>
+        <member name="M:WebRole1.Models.StoreDBContext.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            This method is called when the model for a derived context has been initialized, but
+            before the model has been locked down and used to initialize the context.  The default
+            implementation of this method does nothing, but it can be overridden in a derived class
+            such that the model can be further configured before it is locked down.
+            </summary>
+            <param name="modelBuilder">The builder that defines the model for the context being created.</param>
+            <remarks>
+            Typically, this method is called only once when the first instance of a derived context
+            is created.  The model for that context is then cached and is for all further instances of
+            the context in the app domain.  This caching can be disabled by setting the ModelCaching
+            property on the given ModelBuidler, but note that this can seriously degrade performance.
+            More control over caching is provided through use of the DbModelBuilder and DbContextFactory
+            classes directly.
+            </remarks>
+        </member>
+        <member name="T:WebRole1.Resolver.UnityResolver">
+            <summary>
+            Unity Resolver
+            </summary>
+            <seealso cref="T:System.Web.Http.Dependencies.IDependencyResolver" />
+        </member>
+    </members>
+</doc>

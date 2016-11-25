@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="ProductReviewEngineCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="WebRole1">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="4205cd96-f351-466a-95d8-b9e6f50ce2f1" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="gkhurana" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEGOCw8ZFCIuNR4ZyIxnCKJwwDQYJKoZIhvcNAQEBBQAEggEAkXklVGGgRO0eh3NpKK0zERdaXRH2HhLRA0lrJlmNvJResNmgwGRU9jEcoLQOAGhm6imTY222bgd0vQ46BRwIsJccSfcSown3ZPubjklQusOlvrmDrQIwvYxZQrYOgb2p2rPup8PVfYZNHPxSJNbEwhMcaWQgKixIrwzShT6q7SKDXOwWXXI8XWoqN4kL5PW5K0X8fFu4JjIaTY9hwijYnnL3KrZGS4ifQJby2W/tr72+Q6IADYOt7uWAsPa93R5WLUCxceGplbq0KeXWx/saQzwCgjUbVJ90IZ/GUEYgTf2ydfVEcWC6yh0zB2PodS6RsZMyjO54sRZ8xoRj5CUPrTAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECNL00eBv6QG1gBBqL4BOTEBKFSTzO8BjL5iW" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2017-11-25T23:59:59.0000000-08:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="3EBEF67B4C74114CC2D16F77568B2C3465EB74ED" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>
